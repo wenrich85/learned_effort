@@ -1,18 +1,17 @@
 defmodule LearnedEffort do
-  @moduledoc """
-  Documentation for `LearnedEffort`.
-  """
+  @type state :: :draft | :reviewed | :published
+  @type post ::%{
+    title: String.t,
+    body: String.t,
+    cta: String.t,
+    status: state,
+    views: integer
+  }
 
-  @doc """
-  Hello world.
+  @spec new_post(post):: post
+  def new_post(post) do
 
-  ## Examples
-
-      iex> LearnedEffort.hello()
-      :world
-
-  """
-  def hello do
-    :world
   end
+
+
 end
