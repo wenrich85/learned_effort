@@ -1,17 +1,12 @@
 defmodule LearnedEffort do
-  @type state :: :draft | :reviewed | :published
-  @type post ::%{
-    title: String.t,
-    body: String.t,
-    cta: String.t,
-    status: state,
-    views: integer
-  }
+  alias LearnedEffort.Impl.Post
+
+  @type post :: any()
 
   @spec new_post(post):: post
-  def new_post(post) do
+  defdelegate new_post(post), to: Post
 
-  end
+  defdelegate increment_views(post), to: Post
 
-
+  defdelegate update_status(post, status), to: Post
 end

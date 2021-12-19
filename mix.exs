@@ -21,7 +21,8 @@ defmodule LearnedEffort.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:dialyxir, "~> 1.0", only: [:dev], runtime: false},
+      { :dialyxir, "~> 1.0", only: [:dev], runtime: false},
+      { :earmark, "~> 1.4.19" },
     ]
   end
 end
