@@ -1,5 +1,5 @@
 defmodule LearnedEffort do
-  alias LearnedEffort.Impl.Post
+  alias LearnedEffort.Impl.{Post, Portfolio}
 
   @type post :: any()
 
@@ -8,5 +8,9 @@ defmodule LearnedEffort do
 
   defdelegate increment_views(post), to: Post
 
-  defdelegate update_status(post, status), to: Post
+  defdelegate update_post(post, updates), to: Post
+
+  defdelegate new_portfolio(portfolio), to: Portfolio
+
+  defdelegate update_portfolio(portfolio, updates), to: Portfolio
 end

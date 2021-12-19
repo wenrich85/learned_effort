@@ -23,8 +23,8 @@ defmodule LearnedEffort.Impl.Post do
     %{ post | views: post.views + 1 }
   end
 
-  def update_status(post, status) do
-    %{post | status: status}
+  def update_post(post, updates) do
+    Map.merge(post, updates)
   end
 
   defp parse_body_markdown(post) do
