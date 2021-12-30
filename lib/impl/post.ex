@@ -16,9 +16,6 @@ defmodule LearnedEffort.Impl.Post do
 
   @opaque t :: %__MODULE__{title: String.t()}
 
-  @spec new_post(map()) :: {:ok, t() |:error, atom()}
-
-
   def new_post(%{title: _title, body: body}=post) when is_binary(body) do
     struct(__MODULE__, post)
       |> parse_body_markdown
